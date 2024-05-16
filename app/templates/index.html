@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <p>
+    <p id="apresentacao">
         "Descubra o Mundo da Elegância na Joalheria Aurora, onde tradição e excelência se unem para criar
         joias de tirar o fôlego. Com mais de meio século de história, cada peça é uma obra-prima de design
         e artesanato refinado, desde os clássicos atemporais até interpretações contemporâneas. Nossa paixão
@@ -9,8 +9,13 @@
         coração, tornando-se um símbolo eterno de luxo e beleza."
     </p>
 
-    <img src="{{url_for('static', filename='imagens/imagem1.jpg')}}">
-    <img src="{{url_for('static', filename='imagens/imagem2.jpg')}}">
-    <img src="{{url_for('static', filename='imagens/imagem3.jpg')}}">
+    <section id="catalogoInicio" class="inicio">
+            <img id="img1" src="{{url_for('static', filename='imagens/imagem1.jpg')}}">
+            <img id="img2" src="{{url_for('static', filename='imagens/imagem2.jpg')}}">
+            <img id="img3" src="{{url_for('static', filename='imagens/imagem3.jpg')}}">
+    </section>
+
+
+    <section>
 
 {% endblock %}

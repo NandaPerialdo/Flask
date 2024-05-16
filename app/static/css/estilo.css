@@ -1,3 +1,90 @@
+/*GERAL*/
 body{
-    background-color: #fff123;
+    background-color: #ffffff;
+    margin: 0%;
+    padding: 5%;
 }
+
+li{
+    font-weight: bold;
+    font-family: garamond;
+    display: inline;
+    padding: 1% 5% 1% 5%;
+    border: 2px solid black;
+    background-color: #ffff;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li:hover{
+    background-color: #BC8F8F;
+    color: #fff;
+}
+
+#rodape{
+    height: 50px;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 15px;
+    background-color: #FFB6C1;
+    border: 2px solid #ff;
+}
+
+#boasVindas{
+    margin-top: 5%;
+    font-family: candara;
+}
+
+#apresentacao{
+    font-size: 25px;
+    font-family: garamond;
+}
+
+/*Pagina Inicial*/
+#img1{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+#img2{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+#img3{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+.inicio{
+    text-align: center;
+}
+
+/*Página de Coleçoes*/
+#img4{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+#img5{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+#img6{
+    max-width: 500px;
+    max-height: 450px;
+}
+
+#colecoes{
+    text-align: center;
+}
+
+#colecoes2{
+    text-align: center;
+}
+

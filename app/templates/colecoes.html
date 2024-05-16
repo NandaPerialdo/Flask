@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <p>
-        Página de coleções
-    </p>
+    <h2>Conheça Nossas Coleções!</h2>
 
+    <section id="colecoes">
+        <img id="img4" src="{{url_for('static', filename='imagens/imagem4.jpg')}}">
+        <a><li>Adulto</li></a>
+    </section>
+
+    <section id="colecoes2">
+        <img id="img5" src="{{url_for('static', filename='imagens/imagem5.jpg')}}">
+        <a><li>Infantil</li></a>
+    </section>
 
 {% endblock %}

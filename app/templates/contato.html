@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>{{titulo}}</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/estilo.css')}}">
-</head>
-<body>
-  <nav>
-      <a href="/index">Página Inicial</a>
-      <a href="/contato">Contato</a>
-      <a href="/colecoes">Coleções</a>
-      <a href="/sobre">Sobre</a>
-      <a href="/cadastro">Cadastro</a>
-      <a href="/parceiros">Parceiros</a>
-  </nav>
+{% extends 'base.html' %}
+{% block conteudo %}
 
-  <h1>Fale Conosco!</h1>
+    <h2>Fale Conosco!</h2>
 
-  <h2>Canais de Contato:</h2>
-  <p> Telefone: (11) 91234-5678
-      E-mail: contato@aurora.com</p>
-  <h2>Redes Sociais</h2>
-  <p> Instagram: @aurora.joalheria
-      Facebook: </p>
+    <!--formulario de contato-->
+    <form>
+        <label name="endereco">Seu E-mail: </label>
+        <input type="text" name="txtMail" id="mail"><br><br>
+    </form>
+
+    <p>Sua Mensagem:</p>
+    <textArea id="mensagem" rows="15" cols="40"></textArea>
+    <button type="submit" onclick="">Enviar</button>
 
 
-  <footer>Desenvolvido por {{nome}}</footer>
-</body>
-</html>
+{% endblock %}
