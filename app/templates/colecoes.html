@@ -3,14 +3,16 @@
 
     <h2>Conheça Nossas Coleções!</h2>
 
-    <section id="colecoes">
-        <img id="img4" src="{{url_for('static', filename='imagens/imagem4.jpg')}}">
-        <a><li>Adulto</li></a>
-    </section>
+    <section id="colecoes" class="galeria">
+        <article id="gd1">
+            <img id="img4" src="{{url_for('static', filename='imagens/imagem4.jpg')}}">
+            <a href="" class="botao">Adulto</a>
+        </article>
 
-    <section id="colecoes2">
-        <img id="img5" src="{{url_for('static', filename='imagens/imagem5.jpg')}}">
-        <a><li>Infantil</li></a>
+        <article id="gd2">
+            <img id="img5" src="{{url_for('static', filename='imagens/imagem5.jpg')}}">
+            <a href="" class="botao">Infantil</a>
+        </article>
     </section>
 
 {% endblock %}

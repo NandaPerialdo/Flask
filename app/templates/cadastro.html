@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <p>
-        Página de cadastro
-    </p>
+    <h2>Cadastre-Se!</h2>
+    <p>Te manteremos informado sobre novas coleções e promoções!!!</p>
 
+    <!--formulario de cadastro-->
     <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <label name="nome">Nome: </label>
+        <input type="text" name="txtNome" id="name"><br><br>
+
+        <label name="endereco">Seu Melhor E-mail: </label>
+        <input type="text" name="txtMail" id="mail"><br><br>
+
+        <label name="telefone">Telefone: </label>
+        <input type="text" name="txtTel" id="tel"><br><br>
+
+        <label name="senha">Senha: </label>
+        <input type="text" name="txtSenha" id="passwd"><br><br>
+    </form>
+
+    <button type="submit" onclick="">Confirmar</button>
+
 
 {% endblock %}
