@@ -1,8 +1,13 @@
 from app import app
 from flask import render_template
 from flask import request
+import json
+import requests
 
+link = "https://ti18n-f62da-default-rtdb.firebaseio.com/" #conecta o banco de dados
 @app.route('/') #configurando uma rota web
+
+#páginas
 @app.route('/index')
 def index():
     return render_template('index.html', titulo="Página Inicial", nome="Fernanda")
@@ -26,3 +31,70 @@ def cadastro():
 @app.route('/parceiros')
 def parceiros():
     return render_template('parceiros.html', titulo="Parceiros", nome="Fernanda")
+
+@app.route('/registrar')
+def registrar():
+    return render_template('registrar.html', titulo="Registrar", nome="Fernanda")
+
+@app.route('/login')
+def login():
+    return render_template('login.html', titulo="Login", nome="Fernanda")
+
+#metodos para manipulacao dos dados
+@app.route('/cadastrarUsuario', methods=['POST'])
+def cadastrarUsuario():
+    try:
+        nome     = request.form.get("txtNome")
+        email    = request.form.get("txtMail")
+        telefone = request.form.get("txtTel")
+        senha    = request.form.get("txtSenha")
+        dados = {"nome":nome, "email":email, "telefone":telefone, "senha":senha}
+        requisicao = requests.post(f'{link}/cadastrar/.json', data=json.dumps(dados))
+        return 'Cadastrado com Sucesso!'
+    except Exception as e:
+        return f'Ocorreu um erro\n\n + {e}'
+
+@app.route('/listar')
+def listarTudo():
+    try:
+        requisicao = requests.get(f'{link}/cadastrar/.json')#solicitar os dados
+        dicionario = requisicao.json()
+        return dicionario
+    except Exception as e:
+        return f'Ocorreu um erro\n\n + {e}'
+
+@app.route('/listarIndividual')
+def listarIndividual():
+    requisicao = requests.get(f'{link}/cadastrar/.json')
+    dicionario = requisicao.json()
+    idCadastro = ""
+    try:
+        for codigo in dicionario:
+                usuario = dicionario[codigo]['nome']
+                if(usuario == 'wqe'):
+                    idCadastro = codigo
+                return idCadastro
+    except Exception as e:
+            return f'Algo deu errado!\n\n + {e}'
+
+    # -NySO_S4fUqHm7Esx0zn
+
+@app.route('/atualizar')
+def atualizar():
+    try:
+        dados = {"email":"fefe@gmail.com"}#parametro para atualizaçao
+        requisicao = requests.patch(f'{link}/cadastrar/-NySO_S4fUqHm7Esx0zn/.json', data=json.dumps(dados))
+        return"Atualizado com sucesso!"
+    except Exception as e:
+        return f'Houve um erro!\n\n + {e}'
+
+@app.route('/excluir')
+def excluir():
+    try:
+        requisicao =requests.delete(f'{link}/cadastrar/-NySO_S4fUqHm7Esx0zn/.json')
+        return "Excluido com sucesso!"
+    except Exception as e:
+        return f'Houve um erro!\n\n + {e}'
+
+
+
